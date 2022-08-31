@@ -2,7 +2,7 @@ use crate::node::*;
 use rand::prelude::*;
 
 pub fn random_rpn_expr(maxdepth: u32, maxvars: usize) -> String {
-    let vals = (b'A'..=b'A' + (thread_rng().gen_range(0..maxvars) as u8))
+    let vals = (b'A'..=b'A' + maxvars as u8)
         .map(|x| x as char)
         .collect::<Vec<_>>();
     if maxdepth == 0 {
